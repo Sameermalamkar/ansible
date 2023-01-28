@@ -1,0 +1,6 @@
+- name: playbook.demo
+  hosts: all
+  tasks: 
+    - name: printing msg on hosts
+      debug: 
+        msg: "Playbook runs successfully"
