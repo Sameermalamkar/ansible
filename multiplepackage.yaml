@@ -4,5 +4,9 @@
   tasks: 
     - name: install packages
       ansible.builtin.package:
-        name: tomcat
+        name: 
+          - tomcat
+          - apache2
+          - mariadb-server
+          - tree
         state: present
