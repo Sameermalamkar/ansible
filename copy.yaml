@@ -1,0 +1,8 @@
+- name: copying files from master to node
+  hosts: all
+  become: yes
+  tasks: 
+    - name:
+      ansible.builtin.copy:
+        src: /home/ubuntu/llb.txt
+        dest: /home/ubuntu/llb.pem
