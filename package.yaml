@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks: 
-    - name: installing apache2 
+    - name: install packages
       ansible.builtin.package:
-        name: "{{apache}}"
+        name: apache2
         state: present
