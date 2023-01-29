@@ -4,4 +4,4 @@
     - name: running tasks on conditions
       debug: 
         msg: "this task is running under conditions"
-        when: ansible_distribution"== "Ubuntu"
+        when: "ansible_distribution"== "Ubuntu"
