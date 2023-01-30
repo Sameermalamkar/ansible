@@ -9,4 +9,4 @@
           - apache2
           - mariadb-server
           - tree
-        state: absent
+        state: present
