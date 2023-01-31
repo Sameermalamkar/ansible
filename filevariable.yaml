@@ -2,8 +2,8 @@
   hosts: all
   vars:
     url: www.globalvariable.com
-    var_files: 
-      - filevar.yaml
+  vars_files: 
+    - filevar.yaml
   tasks:
     - name: task2
       debug: 
