@@ -4,5 +4,5 @@
     - name: gathering facts about nodes
       debug:
         msg: 
-          - "ip of node is {{"
+          - "ip of node is {{ansible_hostname}}"
           - "distro of node is {{ansible_distribution}}"

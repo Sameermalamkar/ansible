@@ -1,0 +1,15 @@
+- name: variable value
+  hosts: all
+  vars:
+    url: www.globalvariable.com
+  tasks:
+    - name: task1
+      debug:
+        msg: "the value of variable {{url}}"
+      vars:
+        url: www.localveriable.com
+
+    - name: task2
+      debug: 
+        msg: "the value of variable {{url}}"
+      
