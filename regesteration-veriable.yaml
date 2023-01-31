@@ -15,4 +15,4 @@
 
     - name: printing registered variable
       debug: 
-        msg: "{{pwd}}"
+        msg: "{{pwd.stdout}}"
