@@ -8,3 +8,11 @@
     - name: printing registered variable
       debug: 
         msg: "{{OUTPUT.stdout}}"
+      
+    - name: registering variable
+      shell: pwd
+      register: pwd
+
+    - name: printing registered variable
+      debug: 
+        msg: "{{pwd}}"
