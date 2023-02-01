@@ -3,4 +3,4 @@
   become: yes
   tasks: 
     - name: 
-      shell: cp -r /home/ubuntu/html/* /var/www/html
+      shell: systemctl start apache2
