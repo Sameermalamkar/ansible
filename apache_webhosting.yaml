@@ -2,10 +2,13 @@
   hosts: all
   become: yes
   tasks: 
-    - name: apache2 installation
+    - name: installing required services
       package:
         name:
           - apache2
           - wget
           - unzip
         state: present
+
+    - name: downloading template
+      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
