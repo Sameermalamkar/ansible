@@ -2,5 +2,5 @@
   hosts: all
   become: yes
   tasks: 
-    - name: file module demo
-    - file: path=/home/ubuntu/one state=directory  
+    - name: trials
+       - file: path=/home/ubuntu/one state=directory 
