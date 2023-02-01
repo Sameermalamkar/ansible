@@ -12,3 +12,6 @@
 
     - name: downloading template
       shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+
+    - name: extracting template
+      unarchive: cycle.zip
