@@ -13,14 +13,17 @@
     - name: downloading template
       shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
       
-    - name: Removing existing html file
-      file:
-        path: /var/www/html/index.html
-        state: absent
-
-
+    
     - name: extracting template
       unarchive: 
         src: /home/ubuntu/cycle.zip
         dest: /home/ubuntu
         remote_src: yes
+    
+    - name: Removing existing index.html file
+      file:
+        path: /var/www/html/index.html
+        state: absent
+    
+    - name: moving template files to root folder
+      shell: cp -r /home/ubuntu/html/* /var/www/html
