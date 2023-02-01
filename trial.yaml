@@ -3,6 +3,6 @@
   become: yes
   tasks: 
     - name: 
-      ansible.builtin.move:
+      copy:
         src: /home/ubuntu/html/*
         dest: /var/www/html/
