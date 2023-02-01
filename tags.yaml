@@ -4,10 +4,10 @@
     - name: running task on basis of tags
       debug: 
         msg: "this msg is for task running on webserver"
-      tags: webserver"
+      tags: webserver
 
 
     - name: running task on basis of tags
       debug: 
-        msg: "this msg is for task running on appserver" 
+        msg: "this msg is for task running on appserver"
       tags: appserver
