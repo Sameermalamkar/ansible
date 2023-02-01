@@ -3,6 +3,4 @@
   become: yes
   tasks: 
     - name: 
-      copy:
-        src: /home/ubuntu/html/*
-        dest: /var/www/html/
+      shell: cp -r /home/ubuntu/html/* /var/www/html
