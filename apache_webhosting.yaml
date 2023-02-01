@@ -12,6 +12,12 @@
 
     - name: downloading template
       shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      
+    - name: Removing existing html file
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
 
     - name: extracting template
       unarchive: 

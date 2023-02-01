@@ -1,8 +1,0 @@
-- name: file module demo
-  hosts: all
-  become: yes
-  tasks: 
-    - name: Removing existing war
-      file:
-        path: /var/www
-        state: absent
