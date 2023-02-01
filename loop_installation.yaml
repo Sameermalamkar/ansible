@@ -1,0 +1,12 @@
+- name: loop playbook
+  hosts: all
+  tasks:
+    - name: printing variable in loop 
+      package:
+        name: "{{item}}"
+      loop:
+        - http
+        - nginx
+        - mariadb-server
+        - tree
+        
