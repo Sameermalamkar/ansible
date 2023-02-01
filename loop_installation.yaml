@@ -1,9 +1,11 @@
 - name: loop playbook
   hosts: all
+  become: yes
   tasks:
     - name: printing variable in loop 
       package:
         name: "{{item}}"
+        state: present
       loop:
         - http
         - nginx
