@@ -1,0 +1,13 @@
+- name: running playbook on basis of tags
+  hosts: all
+  tasks: 
+    - name: running task on basis of tags
+      debug: 
+        msg: "this msg is for task running on webserver"
+      tags: webserver"
+
+
+    - name: running task on basis of tags
+      debug: 
+        msg: "this msg is for task running on appserver" 
+      tags: appserver
