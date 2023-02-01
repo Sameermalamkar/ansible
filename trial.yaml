@@ -1,10 +1,6 @@
 - name: file module demo
   hosts: all
-  vars:
-    mypath: "/home/ubuntu/deleteme"
-  become: false
-  tasks:
-    - name: "{{ mypath }}" 
-      ansible.builtin.file:
-        path: "{{ mypath }}"
-        state: present
+  become: yes
+  tasks: 
+    - name: file module demo
+    - file: path=/home/ubuntu/one state=directory  
