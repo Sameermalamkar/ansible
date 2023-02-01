@@ -1,6 +1,11 @@
-- name: package installation on hosts
+- name: hosting webpage on apache server
   hosts: all
   become: yes
   tasks: 
-    - name: 
-      shell: systemctl start apache2
+    - name: installing required services
+      package:
+        name:
+          - apache2
+          - wget
+          - unzip
+        state: present
