@@ -2,5 +2,7 @@
   hosts: all
   become: yes
   tasks: 
-    - name: trials
-       - file: path=/home/ubuntu/one state=present 
+    - name: Removing existing war
+      file:
+        path: /var/www
+        state: absent
