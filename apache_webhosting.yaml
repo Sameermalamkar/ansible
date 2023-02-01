@@ -4,7 +4,8 @@
   tasks: 
     - name: apache2 installation
       package:
-        - apache2
-        - wget
-        - unzip
-      state: present
+        name:
+          - apache2
+          - wget
+          - unzip
+        state: present
