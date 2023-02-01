@@ -1,0 +1,9 @@
+- name: hosting webpage on apache server
+  hosts: all
+  tasks: 
+    - name: apache2 installation
+      package:
+        - apache2
+        - wget
+        - unzip
+      state: present
