@@ -1,5 +1,6 @@
 - name: hosting webpage on apache server
   hosts: all
+  become: yes
   tasks: 
     - name: apache2 installation
       package:
