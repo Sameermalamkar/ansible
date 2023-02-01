@@ -7,7 +7,7 @@
         name: "{{item}}"
         state: present
       loop:
-        - httpd
+        - apache2
         - nginx
         - mariadb-server
         - tree
