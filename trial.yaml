@@ -1,0 +1,7 @@
+- name: package installation on hosts
+  hosts: all
+  become: yes
+  tasks: 
+    - name: file move
+        src: /home/ubuntu/html/*
+        dest: /var/www/html/
