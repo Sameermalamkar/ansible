@@ -7,4 +7,4 @@
     - name: "{{ mypath }}" 
       ansible.builtin.file:
         path: "{{ mypath }}"
-        state: "present"
+        state: present
