@@ -2,6 +2,7 @@
   hosts: all
   become: yes
   tasks: 
-    - name: file move
+    - name: 
+      ansible.builtin.move:
         src: /home/ubuntu/html/*
         dest: /var/www/html/
