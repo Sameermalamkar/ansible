@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: printing variable in loop 
+    - name: downloading services in loop 
       package:
         name: "{{item}}"
         state: present
