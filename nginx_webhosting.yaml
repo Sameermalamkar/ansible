@@ -1,0 +1,29 @@
+- name: hosting webpage on apache server
+  hosts: all
+  become: yes
+  tasks: 
+    - name: installing required services
+      package:
+        name:
+          - nginx
+          - wget
+          - unzip
+        state: present
+
+    - name: downloading template
+      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      
+    
+    - name: extracting template in same directory
+      unarchive: 
+        src: /home/ubuntu/cycle.zip
+        dest: /home/ubuntu
+        remote_src: yes
+    
+    - name: Removing existing index.html file from root directory of apache
+      file:
+        path: /usr/share/nginx/html/index.html
+        state: absent
+    
+    - name: moving extracted template files to root directory of apache 
+      shell: cp -r /home/ubuntu/html/* /usr/share/nginx/html
