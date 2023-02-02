@@ -48,3 +48,9 @@
     - name: moving extracted template files to root directory of apache 
       shell: cp -r /home/ec2-user/html/* /var/www/html
       when: ansible_distribution == "Amazon"
+
+    - name: starting service
+      service:
+        name: httpd
+        state: started
+      when: ansible_distribution == "Amazon"
