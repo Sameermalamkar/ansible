@@ -11,12 +11,12 @@
         state: present
 
     - name: downloading template
-      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/eflyer.zip
       
     
     - name: extracting template in same directory
       unarchive: 
-        src: /home/ubuntu/cycle.zip
+        src: /home/ubuntu/eflyer.zip
         dest: /home/ubuntu
         remote_src: yes
     
