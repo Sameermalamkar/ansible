@@ -1,0 +1,4 @@
+- name: downloading services in loop 
+  package:
+        name: apache2
+        state: present
