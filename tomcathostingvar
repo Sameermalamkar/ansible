@@ -1,0 +1,28 @@
+- name: tom cat hosting
+  hosts: all
+  become: yes
+  vars:
+     tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+     tomcat_url_split: "{{tomcat_url.split('/') | last}}"
+     tomcat_dir: "/opt/{{tomcat_url_split | regex_replace ('.tar.gz',)}}"
+     tomcat_dir1: "/opt/"
+  tasks:
+    - name: installing java
+      package:
+        name:
+         - default-jdk
+        state: present
+
+    - name: downloading tomcat
+      get_url:
+        url: "{{tomcat_url}}"
+        dest: /home/ubuntu
+
+    - name: extracting files from .tar
+      unarchive:
+        src: /home/ubuntu/{{tomcat_url_split}}
+        dest: "{{tomcat_dir1}}"
+        remote_src: yes
+
+    - name: start and enable tomcat
+      shell: nohup {{tomcat_dir}}/bin/startup.sh
