@@ -1,4 +1,19 @@
-- name: downloading services in loop 
+- name: installing java
   package:
-        name: apache2
-        state: present
+    name:
+       - default-jdk
+    state: present
+
+- name: downloading tomcat
+  get_url:
+    url: "{{tomcat_url}}"
+    dest: /home/ubuntu
+
+- name: extracting files from .tar
+  unarchive:
+    src: /home/ubuntu/{{tomcat_url_split}}
+    dest: "{{tomcat_dir1}}"
+    remote_src: yes
+
+- name: start and enable tomcat
+  shell: nohup {{tomcat_dir}}/bin/startup.sh
