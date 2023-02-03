@@ -2,16 +2,19 @@
   hosts: all
   become: yes
   tasks: 
-    - name: installing required services
+    - name: downloading services in loop 
       package:
-        name:
-          - apache2
-          - wget
-          - unzip
+        name: "{{item}}"
         state: present
+      loop:
+        - apache2
+        - wget
+        - unzip
 
     - name: downloading template
-      shell: wget https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      get_url:
+        url: https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+        dest: /home/ubuntu
       
     
     - name: extracting template in same directory
