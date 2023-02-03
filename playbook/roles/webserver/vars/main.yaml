@@ -1,5 +1,4 @@
-vars:
-  tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
-  tomcat_url_split: "{{tomcat_url.split('/') | last}}"
-  tomcat_dir: "/opt/{{tomcat_url_split | regex_replace ('.tar.gz',)}}"
-  tomcat_dir1: "/opt/"
+tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+tomcat_url_split: "{{tomcat_url.split('/') | last}}"
+tomcat_dir: "/opt/{{tomcat_url_split | regex_replace ('.tar.gz',)}}"
+tomcat_dir1: "/opt/"
