@@ -4,8 +4,8 @@
   tasks:
     - name: Package installion
       ansible.builtin.package:
-        state: present
         name: "{{item}}"
+        state: present
       loop:
         - httpd
         - unzip
