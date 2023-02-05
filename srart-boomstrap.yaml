@@ -1,0 +1,26 @@
+- name: template hosting playbook
+  hosts: all
+  become: yes 
+  tasks:
+    - name: Package installion
+      ansible.builtin.package:
+        state: present
+        name: "{{item}}"
+      loop:
+        - httpd
+        - unzip
+        - wget 
+
+    - name: download template
+      ansible.builtin.get_url:
+        url: https://github.com/startbootstrap/startbootstrap-resume/archive/gh-pages.zip
+        dest: /opt/
+
+    - name: unzip templete
+      ansible.builtin.unarchive:
+        src: /opt/startbootstrap-resume-gh-pages.zip
+        dest: /var/www/html
+        remote_src: yes
+
+    - name: restart httpd service 
+      shell: systemctl restart httpd
